@@ -1,0 +1,36 @@
+@import "../../styles/colors.scss";
+
+@mixin count {
+  display: inline-block;
+  border-radius: 999px;
+  background: $gray-400;
+  padding: 0.125rem 0.5rem;
+}
+
+.CountersWrapper {
+  width: 46rem;
+  margin: 4.0625rem 0 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.createTodos {
+  color: $blue;
+
+  span {
+    @include count;
+  }
+}
+
+.concludedTodos {
+  color: $purple;
+
+  span {
+    @include count;
+  }
+}

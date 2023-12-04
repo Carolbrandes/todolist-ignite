@@ -1,0 +1,19 @@
+.ButtonWrapper {
+  border-radius: 8px;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+
+  span {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}

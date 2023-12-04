@@ -1,0 +1,38 @@
+@import "../../styles/colors.scss";
+
+.TodoItemWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid $gray-400;
+  background: $gray-500;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  min-height: 4.5rem;
+
+  label {
+    width: 46rem;
+    color: $gray-100;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    input [type="radio"] {
+      display: none;
+    }
+  }
+
+  button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+  }
+}
+
+.customInputRadio {
+  width: 17px;
+  background: url("../../assets/radio.svg") no-repeat;
+  background-size: contain;
+}

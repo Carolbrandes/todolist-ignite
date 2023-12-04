@@ -27,4 +27,11 @@ html{
 body{
 	background: $gray-600;
 	-webkit-font-smoothing: antialiased; /* **fontes mais nitidas** */
+
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

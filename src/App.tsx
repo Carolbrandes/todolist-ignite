@@ -1,16 +1,22 @@
-import { CreateNewTask } from "./components/CreateNewTask"
-import { Header } from "./components/Header"
-import './styles/global.scss'
-
+import { CreateNewTask } from "./components/CreateNewTask";
+import { EmptyTodo } from "./components/EmptyTodo";
+import { Header } from "./components/Header";
+import { TodoList } from "./components/TodoList";
+import { TodosCounters } from "./components/TodosCounters";
+import "./styles/global.scss";
 
 function App() {
- 
   return (
     <>
       <Header />
-      <CreateNewTask />
+      <div className="container">
+        <CreateNewTask />
+        <TodosCounters />
+        <EmptyTodo />
+        <TodoList />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
