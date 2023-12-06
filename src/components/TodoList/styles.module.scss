@@ -1,5 +1,12 @@
 @import "../../styles/colors.scss";
 
+@mixin radio($img) {
+  width: 1.0625rem;
+  height: 1.0625rem;
+  background: url($img) no-repeat;
+  background-size: contain;
+}
+
 .TodoItemWrapper {
   display: flex;
   justify-content: space-between;
@@ -11,6 +18,11 @@
   padding: 1rem;
   min-height: 4.5rem;
 
+  & + .TodoItemWrapper{
+    margin-top: 0.75rem;
+  }
+  
+
   label {
     width: 46rem;
     color: $gray-100;
@@ -18,9 +30,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+    display: flex;
 
-    input [type="radio"] {
+    input[type="radio"] {
       display: none;
+    }
+
+    span {
+      margin-left: 1rem;
     }
   }
 
@@ -32,7 +49,14 @@
 }
 
 .customInputRadio {
-  width: 17px;
-  background: url("../../assets/radio.svg") no-repeat;
-  background-size: contain;
+  @include radio("../../assets/radio.svg");
+}
+
+.customInputRadioConcluded {
+  @include radio("../../assets/radio-concluded.svg");
+}
+
+.labelConcluded {
+  color: $gray-300;
+  text-decoration: line-through;
 }

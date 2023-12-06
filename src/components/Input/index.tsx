@@ -1,9 +1,15 @@
+import { ComponentProps } from 'react'
 import styles from './styles.module.scss'
 
-export const Input = () => {
+interface InputProps extends ComponentProps<'input'> {
+
+}
+
+export const Input = ({...props}: InputProps) => {
+  
   return (
     <div className={styles.inputWrapper}>
-      <input placeholder='Adicione uma nova tarefa' type="text" />
+      <input {...props} />
     </div>
   )
 }
