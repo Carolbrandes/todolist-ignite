@@ -34,15 +34,23 @@ export function TodoProvider({ children }: TodoProviderProps): JSX.Element {
   const [todoList, setTodoList] = useState<TodoProps[]>([]);
 
   const addNewTodo = (todo: NewTodoProps) => {
-    const newTodo: TodoProps = {
-        id:todo.task,
+    // Verificar se o todo já existe na lista pelo id
+    const todoExists = todoList.some((existingTodo) => existingTodo.id === todo.task);
+  
+    // Se o todo não existe, adicionar à lista
+    if (!todoExists) {
+      const newTodo: TodoProps = {
+        id: todo.task,
         task: todo.task,
         isConcluded: false,
+      };
+  
+      setTodoList((prevTodoList) => [...prevTodoList, newTodo]);
+    } else {
+      console.log(`O todo com a tarefa "${todo.task}" já existe na lista.`);
     }
-
-    setTodoList(prevTodoList => [...prevTodoList, newTodo])
- 
-  }
+  };
+  
 
   const changeStatus = (id: string) => {
     console.log('fn changeStatus')
